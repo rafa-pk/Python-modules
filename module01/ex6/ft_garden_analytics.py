@@ -4,6 +4,9 @@ class Plant:
         self.height = height
         self.age = age
 
+    def grow(self, height)
+        print(f"{self.name} grew {height - self.height}cm")
+
 
 class FloweringPlant(Plant)
     def __init__(self, name, height, age, color, bloom_state):
@@ -16,6 +19,7 @@ class PrizeFlower(FloweringPlant):
         super().__init__(name, height, age, color, bloom_state)
         self.scoring = scoring
 
+    def 
 class GardenManager:
     def __init__(self):
 
@@ -24,6 +28,7 @@ class GardenManager:
 
 class GardenStats():
     def __init__(self):
+        self.gardens = {}
 
 
 
