@@ -1,46 +1,55 @@
 class Plant:
-
-    def __init__(self, name, height, age):
+    """Plant blueprint, parent class, defines plant object with base characteristics"""
+    def __init__(self, name: str, height: int, age: int) -> None:
+        """initalization method, associates base characteristics to new object"""
         self.name = name
         self.height = height
         self.age = age
 
 
-class Flower(Plant):
-
-    def __init__(self, name, height, age, color):
+class Flower(Plant) -> None:
+    """Flower blueprint, inherits from Plant but adds a color characteristic"""
+    def __init__(self, name: str, height: int, age: int, color: str) -> None:
+        """initalization method, associates characteristics of parent class
+        and Flower class to object"""
         super().__init__(name, height, age)
         self.color = color
 
-    def bloom(self):
+    def bloom(self) -> None:
+        """method which prints the name of a flower object blooming well"""
        print(f"{self.name} is blooming beautifully!") 
 
 
-class Tree(Plant):
-
-    def __init__(self, name, height, age, trunk_diameter):
+class Tree(Plant) -> None:
+    """Tree blueprint, inherits from Plant and adds a trunk diameter characteristic"""
+    def __init__(self, name: str, height: int, age: int, trunk_diameter: int) -> None:
+        """initialization method, associates characteristics of parent class
+        and Tree class to object"""
         super().__init__(name, height, age)
         self.trunk_diameter = trunk_diameter
 
-    def produce_shade(self):
+    def produce_shade(self) -> None:
+        """method which calculates the area of produced shade by the Tree and prints it"""
         radius = self.trunk_diameter / 10
         print(f"{self.name} provides "
               f"{(3.14 * (radius ** 2)):.0f} square meters")
 
 
-class Vegetable(Plant):
-
-    def __init__(self, name, height, age, harvest_season, nutritional_value):
+class Vegetable(Plant) -> None:
+    """Vegetable blueprint, inherits from Plan and adds harvest season and nutritional value characteristics"""
+    def __init__(self, name: str, height: int, age: int, harvest_season: str, nutritional_value: str) -> None:
+        """initalizer method, associates characteristics of parent class and Vegetable method to object"""
         super().__init__(name, height, age)
         self.harvest_season = harvest_season
         self.nutritional_value = nutritional_value
 
-    def nutritional_v(self):
+    def nutritional_v(self) -> None:
+        """method which prints nutritional value to stdout"""
         print(f"{self.name} is rich in {self.nutritional_value}")
 
  
-def ft_plant_types():
-
+def ft_plant_types() -> None:
+    """"""
     rose = Flower("Rose", 25, 30, "red")
     marguerite = Flower("Marguerite", 15, 10, "white")
     oak = Tree("Oak", 500, 1825, 50)
