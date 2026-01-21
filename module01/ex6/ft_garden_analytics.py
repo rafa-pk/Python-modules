@@ -16,6 +16,12 @@ class Plant:
         """general instance method which returns the plants info"""
         return f"{self.name}: {self.height}cm"
 
+    @staticmethod
+    def validate_height(height):
+        """static method which validates or rejects height passed as arg"""
+        if height > 0:
+            True
+
 
 class FloweringPlant(Plant):
     """child of Plant class, blueprint for a flowering plant"""
@@ -26,7 +32,7 @@ class FloweringPlant(Plant):
         self.status = True
 
 
-    def get_info(self):
+    def get_info(self) -> None:
         print(f"{super().get_info()}, {self.color} flowers (blooming)\n")
 
 
@@ -37,15 +43,32 @@ class PrizeFlower(FloweringPlant):
         super().__init__(self, name, height, color)
         self.points = points
 
+
 class GardenManager:
     """manager class, which will manage multiple gardens"""
-    def __init__(self, garden_name):
-        
-    
-    class GardenStats:
+   class GardenStats:
+        """nested class to keep track of each garden's stats"""
         def __init__(self)
 
 
+     def __init__(self, garden_name: str) -> None:
+        """initialization method for the Managing class"""
+        self.garden_name = garden_name
+        self.garden_plants = []
+
+    def add_plant(self, new_plant: Plant) -> None:
+        """instance method which adds new_plant to garden_plants and
+        prints message"""
+        self.garden_plants.append(new_plant)
+        print(f"Added {self.new_plant} to {self.garden_name}'s garden")
+
+
+    def help_all(self) -> None:
+        """instance method to help all plants grow"""
+        print(f"\n{self.garden_name} is helping all plants grow...\n")
+        for plant in self.garden_plants:
+           plant.grow(1)
+    
     @classmethod
     def create_garden_network(cls)
 
