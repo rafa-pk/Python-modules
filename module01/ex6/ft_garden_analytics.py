@@ -166,9 +166,9 @@ def ft_garden_analytics() -> None:
 
     gardens[0].help_all()
     gardens[0].report()
-    print(f"Height validation test: {Plant.val_height(oak_tree.height)}")
+    print(f"\nHeight validation test: {Plant.val_height(oak_tree.height)}")
     GardenManager.compare_gardens(gardens[0], gardens[1])
-    print(f"Total gardens managed: {GardenManager.get_total_gardens()}\n")
+    print(f"Total gardens managed: {GardenManager.get_total_gardens()}")
 
 
 if __name__ == "__main__":

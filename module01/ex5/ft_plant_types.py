@@ -39,7 +39,7 @@ class Tree(Plant):
         and prints it"""
         radius = self.trunk_diameter / 10
         print(f"{self.name} provides "
-              f"{(3.14 * (radius ** 2)):.0f} square meters")
+              f"{(3.14 * (radius ** 2)):.0f} square meters of shade")
 
 
 class Vegetable(Plant):

@@ -1,28 +1,33 @@
 class Plant:
     """Plant blueprint, class holding information about a plant object and
-    methods that make it grow, age, or that print its characteristics"""    
+    methods that make it grow, age, or that print its characteristics"""
     def __init__(self, name: str, height: int, age: int) -> None:
+        """initializer method, assigns plant characteristics to newly
+        created object"""
         self.name = name
         self.height = height
         self.age = age
-    """initializer method, assigns plant characteristics to newly created object"""
+
     def grow(self) -> None:
+        """method which makes plant object grow by 1 cm"""
         self.height += 1
-    """method which makes plant object grow by 1 cm"""
+
     def older(self) -> None:
+        """method which makes plant age by 1 day"""
         self.age += 1
-    """method which makes plant age by 1 day"""
+
     def get_info(self) -> str:
+        """method which prints plant characteristics to stdout"""
         return f"{self.name}: {self.height}cm, {self.age} days old"
-    """method which prints plant characteristics to stdout"""
 
 
 def ft_plant_growth(name: str, height: int, age: int, time: int) -> None:
-    """function which takes characteristics and a timeframe, creates and initializes a plant
-    object with the characteristics and makes them grow for that timeframe"""
+    """function which takes characteristics and a timeframe, creates
+    and initializes a plant object with the characteristics and makes
+    them grow for that timeframe"""
     plant = Plant(name, height, age)
 
-    print(f"=== Day 1 ===")
+    print("=== Day 1 ===")
     print(plant.get_info())
     for _ in range(1, time):
         plant.grow()

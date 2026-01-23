@@ -2,13 +2,15 @@ class Plant:
     """Plant blueprint, class containing characteristics of a plant object
     and a method to display a newly created object's characteristics"""
     def __init__(self, name: str, height: int, age: int) -> None:
+        """method to initialize plant object with given characteristics"""
         self.name = name
         self.height = height
         self.age = age
-    """method to initialize plant object with given characteristics"""
+
     def created(self) -> None:
+        """method to print characteristics of created object"""
         print(f"Created: {self.name} ({self.height}cm, {self.age} days)")
-    """method to print characteristics of created object"""
+
 
 def ft_plant_factory() -> None:
     """function which creates a list of Plant objects, tracks the number
