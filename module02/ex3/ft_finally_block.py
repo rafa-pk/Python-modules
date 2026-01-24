@@ -18,6 +18,7 @@ class Plant:
 def water_plants(plant_list: list[Plant]) -> None:
     """function which opens a watering system and makes
     sure it is always closed"""
+    success = True
     print("Opening watering system")
     try:
         for plant in plant_list:
@@ -25,9 +26,12 @@ def water_plants(plant_list: list[Plant]) -> None:
                 plant.check_name()
                 print(f"Watering {plant.name}")
             except InvalidPlant as error:
+                success = False
                 print(f"Error: {error}")
     finally:
         print("Closing watering system (cleanup)")
+    if success:
+        print("Watering completed successfully!")
 
 
 def test_watering_system() -> None:
