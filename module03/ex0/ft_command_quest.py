@@ -1,6 +1,7 @@
 import sys
 
 def main() -> None:
+    """main function to take command line arguments"""
     print("=== Command Quest ===")
     ac = len(sys.argv)
     if ac == 1:
