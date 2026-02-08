@@ -16,8 +16,8 @@ def create_position(arg: str,
         return (x, y, z), flag
     except ValueError as message:
         print(f"Error parsing coordinates: {message}")
-        print(f"Error details - Type: {type(message).__name__}, Args: "
-              f"{message}\n")
+        print(f"Error details - Type: {type(message).__name__}, Args: ("
+              f'"{message}")\n')
         return (0, 0, 0), flag
 
 

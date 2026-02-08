@@ -1,7 +1,7 @@
 import sys
 
+
 def main() -> None:
-    """main function to take command line arguments"""
     print("=== Command Quest ===")
     ac = len(sys.argv)
     if ac == 1:
@@ -13,6 +13,7 @@ def main() -> None:
         for i in range(1, ac):
             print(f"Argument {i}: {sys.argv[i]}")
     print(f"Total arguments: {ac}")
+
 
 if __name__ == "__main__":
     main()
