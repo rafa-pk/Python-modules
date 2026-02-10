@@ -60,5 +60,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    """program's entry point"""
     main()
