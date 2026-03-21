@@ -7,47 +7,52 @@ def event_generator(events_to_generate: int) -> Generator[dict, None, None]:
     """function which generates events and yields a dict"""
     players = ["alice", "bob", "charlie"]
     events = ["killed monster", "found treasure", "leveled up"]
-    
+
     for _ in range(1, events_to_generate + 1):
         event_tp = random.choice(events)
         lvl = random.randint(1, 20)
-        yield({"player": random.choice(players), "level": lvl, "type": event_tp})
+        yield ({"player": random.choice(players),
+                "level": lvl, "type": event_tp})
 
 
-def fibonnaci() -> Generator[int, None, None]:
+def fibonacci() -> Generator[int, None, None]:
     """fibonnaci generator"""
     num1, num2 = 0, 1
     while True:
-        yield(num1)
+        yield (num1)
         num1, num2 = num2, num1 + num2
 
 
-def primes() -> Generator[int, None, None]:
+def primes_() -> Generator[int, None, None]:
     """prime number generator"""
     num = 2
     while True:
         is_prime = True
-        for i in range(2, int(num**0,5) + 1):
+        for i in range(2, int(num**0.5) + 1):
             if num % i == 0:
                 is_prime = False
                 break
         if is_prime:
-            yield(num)
+            yield (num)
         num += 1
-    
+
 
 def demo(fib_len: int, prime_len: int) -> None:
     """function to demonstrate fibonacci sequence and prime numbers"""
     fib = []
     prime = []
+    fib_gen = fibonacci()
+    prime_gen = primes_()
 
     for _ in range(fib_len):
-        fib.append(next(fibonnaci()))
+        fib.append(next(fib_gen))
     for _ in range(prime_len):
-        prime.append(next(primes()))
+        prime.append(next(prime_gen))
     print("=== Generator Demonstration ===")
-    print("Fibonnaci sequence (first ({fib_len}): {fib}")
-    print("Prime numbers (first {prime_len}): {primes(prime)}")
+    print("Fibonnaci sequence (first ({fib_len}): "
+          f"{', '.join(str(val) for val in fib)}")
+    print("Prime numbers (first {prime_len}): "
+          f"{', '.join(str(val) for val in prime)}")
 
 
 def main() -> None:
@@ -63,7 +68,8 @@ def main() -> None:
     start = time.time()
     for event in event_generator(events_to_generate):
         if total_events < 3:
-            print(f"Event {total_events + 1}: Player {event['player']} (level {event['level']}) {event['type']}")
+            print(f"Event {total_events + 1}: Player {event['player']} "
+                  f"(level {event['level']}) {event['type']}")
         elif total_events == 3:
             print("...\n")
         if event["level"] > 10:
