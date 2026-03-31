@@ -4,8 +4,8 @@ from typing import Dict
 
 class CreatureCard(Card):
     """specific card: Creature, inherits from Card blueprint"""
-    def __init__(self, name: str, cost: int, rarity: str, 
-                attack: int, health: int) -> None:
+    def __init__(self, name: str, cost: int, rarity: str,
+                 attack: int, health: int) -> None:
         """Constructor method, initalizes class attributes"""
         super().__init__(name, cost, rarity)
         self.type = "Creature"
@@ -35,11 +35,16 @@ class CreatureCard(Card):
     def get_card_info(self) -> Dict:
         info = super().get_card_info()
         info.update({
-            "type": "Creature", 
-            "attack": self.attack, 
+            "type": "Creature",
+            "attack": self.attack,
             "health": self.health,
             })
         return info
 
     def attack_target(self, target: str) -> Dict:
-        pass
+        return {
+                "attacker": self.name,
+                "target": target,
+                "damage dealt": self.attack,
+                "combat resolved": True,
+            }
