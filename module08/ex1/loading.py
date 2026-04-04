@@ -25,19 +25,21 @@ def main() -> None:
     try:
         import matplotlib
         import matplotlib.pyplot as mat
-        print(f"[OK] matplotlib ({matplotlib.__version__}) - Visualization ready")
+        print(f"[OK] matplotlib ({matplotlib.__version__}) "
+              f"- Visualization ready")
     except ImportError:
         print("[MISSING] matplotlib - Install via pip/poetry")
         sys.exit(1)
 
     print("\nAnalyzing Matrix data...")
-    df = pd.DataFrame(np.random.randint(0, 100, size=(1000, 3)), columns=["Agent", "Threat", "Signal"])
+    df = pd.DataFrame(np.random.randint(0, 100, size=(1000, 3)),
+                      columns=["Agent", "Threat", "Signal"])
     print(f"Processing {len(df)} data points...")
     print("Generating visualization...")
     mat.plot(df["Threat"])
     mat.savefig("matrix_analysis.png")
     print("\nAnalysis complete!")
-    print("Results saved to matrix_analysis.png") 
+    print("Results saved to matrix_analysis.png")
 
 
 if __name__ == "__main__":
