@@ -5,6 +5,7 @@ from .capabilities import HealCapability, TransformCapability
 class Sproutling(Creature, HealCapability):
     """Sproutling abstract class, inheriting from creature and heal cap."""
     def __init__(self, name: str, type: str) -> None:
+        """Initialization method for Sproutling class"""
         super().__init__(name, type)
 
     def attack(self) -> str:
@@ -19,6 +20,7 @@ class Sproutling(Creature, HealCapability):
 class Bloomelle(Creature, HealCapability):
     """Bloomelle abstract class, inheriting from creature and heal cap."""
     def __init__(self, name: str, type: str) -> None:
+        """Initialization method for Bloomelle class"""
         super().__init__(name, type)
 
     def attack(self) -> str:
@@ -33,6 +35,7 @@ class Bloomelle(Creature, HealCapability):
 class Shiftling(Creature, TransformCapability):
     """Shiftling abstract class, inherits from creature and transform cap."""
     def __init__(self, name: str, type: str) -> None:
+        """Initialization method for Shiftling class"""
         super().__init__(name, type)
         self.state = "normal"
 

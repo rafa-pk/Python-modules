@@ -21,8 +21,10 @@ class TransformCapability(ABC):
 
     @abstractmethod
     def transform(self) -> str:
+        """transform abstract base class"""
         pass
 
     @abstractmethod
     def revert(self) -> str:
+        """reverst abstract base class"""
         pass
