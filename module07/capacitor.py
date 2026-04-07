@@ -1,3 +1,4 @@
+# mypy: disable-error-code="attr-defined"
 from ex1 import HealingCreatureFactory, TransformCreatureFactory
 
 

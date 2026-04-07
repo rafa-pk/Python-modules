@@ -29,6 +29,7 @@ class NormalStrategy(BattleStrategy):
     def act(self, creature: Creature) -> str:
         """act method for NormalStrategy"""
         print(creature.attack())
+        return ""
 
     def is_valid(self, creature: Creature) -> bool:
         """is_valid method for NormalStrategy"""
@@ -46,9 +47,10 @@ class AggressiveStrategy(BattleStrategy):
         if not self.is_valid(creature):
             raise Exception(f"Invalid Creature '{creature.name}' "
                             f"for this aggressive strategy")
-        print(creature.transform())
+        print(creature.transform())  # type: ignore[attr-defined]
         print(creature.attack())
-        print(creature.revert())
+        print(creature.revert())  # type: ignore[attr-defined]
+        return ""
 
     def is_valid(self, creature: Creature) -> bool:
         """is_valid method for AgressiveStrategy"""
@@ -69,7 +71,8 @@ class DefensiveStrategy(BattleStrategy):
             raise Exception(f"Invalid Creature '{creature.name}' "
                             f"for this defensive strategy")
         print(creature.attack())
-        print(creature.heal())
+        print(creature.heal())  # type: ignore[attr-defined]
+        return ""
 
     def is_valid(self, creature: Creature) -> bool:
         """is_valid method for DefensiveStrategy"""

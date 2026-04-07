@@ -1,3 +1,4 @@
+from typing import Any
 from ex0.creatures import Creature
 from .capabilities import HealCapability, TransformCapability
 
@@ -12,7 +13,7 @@ class Sproutling(Creature, HealCapability):
         """Sproutling implementation of attack abstract method"""
         return f"{self.name} uses Vine Whip!"
 
-    def heal(self) -> str:
+    def heal(self, target: Any) -> str:
         """Sproutling implementation of heal abstract method"""
         return f"{self.name} heals itself for a small amount"
 
@@ -27,7 +28,7 @@ class Bloomelle(Creature, HealCapability):
         """Bloomelle implementation of attack abstract method"""
         return f"{self.name} uses Petal Dance!"
 
-    def heal(self) -> str:
+    def heal(self, target: Any) -> str:
         """Sproutling implementation of heal abstract method"""
         return f"{self.name} heals itself and others for a large amount"
 

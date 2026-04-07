@@ -1,3 +1,4 @@
+from typing import Any
 from abc import ABC, abstractmethod
 
 
@@ -8,7 +9,7 @@ class HealCapability(ABC):
         super().__init__()
 
     @abstractmethod
-    def heal(self, target) -> str:
+    def heal(self, target: Any) -> str:
         """Healing abstract method"""
         pass
 
