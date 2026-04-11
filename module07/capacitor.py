@@ -12,13 +12,13 @@ def main() -> None:
     healing_base = healing_factory.create_base()
     print(healing_base.describe())
     print(healing_base.attack())
-    print(healing_base.heal())
+    print(healing_base.heal(None))
 
     print("  evolved:")
     healing_adv = healing_factory.create_evolved()
     print(healing_adv.describe())
     print(healing_adv.attack())
-    print(healing_adv.heal())
+    print(healing_adv.heal(None))
 
     print("\nTesting Creature with transform capability")
     transform_factory = TransformCreatureFactory()

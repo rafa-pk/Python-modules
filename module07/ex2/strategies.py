@@ -71,7 +71,7 @@ class DefensiveStrategy(BattleStrategy):
             raise Exception(f"Invalid Creature '{creature.name}' "
                             f"for this defensive strategy")
         print(creature.attack())
-        print(creature.heal())  # type: ignore[attr-defined]
+        print(creature.heal(None))  # type: ignore[attr-defined]
         return ""
 
     def is_valid(self, creature: Creature) -> bool:

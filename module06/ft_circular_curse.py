@@ -1,7 +1,7 @@
 def main() -> None:
 
     print("\n=== Circular Curse Breaking ===\n")
-    
+
     print("Testing ingredient validation:")
     from alchemy.grimoire.validator import validate_ingredients
     print(f'validate_ingredients("fire air"): '
